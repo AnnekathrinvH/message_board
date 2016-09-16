@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <title>MESSAGE BOARD</title>
+    </head>
+    <body>
+        <h1>message board</h1>
+        <div id="main">
+        </div>
+        <script id="register" type="text/handlebars">
+            <form>
+                <div>
+                    <label for="input">FIRST NAME<label>
+                    <input type="text" name="first">
+               </div>
+               <div>
+                   <label for="input">LAST NAME<label>
+                   <input type="text" name="last">
+               </div>
+               <div>
+                  <label for="input">EMAIL<label>
+                  <input type="text" name="email">
+                </div>
+                <div>
+                     <label for="input">PASSWORD<label>
+                     <input type="password" name="password" >
+                </div>
+                <div class="button">
+                    <input id="registerButton" type="button" value="SUBMIT">
+               </div>
+            </form>
+        </script>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="assets/underscore.js"></script>
+        <script src="assets/backbone.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
