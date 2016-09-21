@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <title>MESSAGE BOARD</title>
+    </head>
+    <body>
+        <h1>message board</h1>
+        <div id="main">
+        </div>
+        <div id="loggedIn">
+            <script id="status" type="text/handlebars">
+             {{isLoggedIn}}
+             </script>
+        </div>
+
+
+        <script id="register" type="text/handlebars">
+        <div class="title">CREATE A NEW ACCOUNT</div>
+            <form id ="registerUser">
+                <div class="form">
+                    <label for="input">FIRST NAME<label>
+                    <input type="text" name="first">
+               </div>
+               <div class="form">
+                   <label for="input">LAST NAME<label>
+                   <input type="text" name="last">
+               </div>
+               <div class="form">
+                  <label for="input">EMAIL<label>
+                  <input type="text" name="email">
+                </div>
+                <div class="form">
+                     <label for="input">PASSWORD<label>
+                     <input type="password" name="password" >
+                </div>
+                <div class="button">
+                    <input id="registerButton" type="button" value="SUBMIT">
+               </div>
+               <div>
+                   ALREADY REGISTERED?
+                   <input id="loginLink" type="button" value="LOGIN">
+
+               </div>
+            </form>
+        </script>
+
+
+        <script id="login" type="text/handlebars">
+        <div class="title">LOGIN TO YOUR ACCOUNTT</div>
+            <form id ="loginUser">
+                <div class="form">
+                    <label for="input">FIRST NAME<label>
+                    <input type="text" name="first">
+               </div>
+               <div class="form">
+                   <label for="input">LAST NAME<label>
+                   <input type="text" name="last">
+               </div>
+               <div class="form">
+                  <label for="input">EMAIL<label>
+                  <input type="text" name="email">
+                </div>
+                <div class="form">
+                     <label for="input">PASSWORD<label>
+                     <input type="password" name="password" >
+                </div>
+                <div class="button">
+                    <input id="loginButton" type="button" value="SUBMIT">
+               </div>
+               <div>
+                   NEW USER?
+                   <input id="register" type="button" value="REGISTER">
+               </div>
+            </form>
+        </script>
+
+        <div id="message" style="display: none;">
+            <div id="board">
+                <script id="allMessages" type="text/handlebars">
+                    {{{{raw-helper}}}}
+                        {{#.}}
+                            <div id="oneMessage">
+                                <div>{{first_name}}</div>
+                                <div>{{time}}</div>
+                                {{message}}
+                            </div>
+                        {{/.}}
+                    {{{{/raw-helper}}}}
+                </script>
+            </div>
+        <div id="post">
+            <label for text>YOUR MESSAGE</label>
+            <textarea id="newMessage"name="text" cols="35" rows="4"></textarea>
+            <input id="postMassageButton" type="button" value="SUBMIT">
+
+
+        </div>
+
+    </div>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="assets/underscore.js"></script>
+        <script src="assets/backbone.js"></script>
+        <script type="javascript" id="userData">
+            {{#user}}
+                {
+                "first_name": "{{first}}",
+                "last_name": "{{last}}",
+                "email": "{{email}}",
+                "logInStatus": "{{loggedIn}}"
+            }
+            {{/user}}
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
